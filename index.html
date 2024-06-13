@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js"></script>
+    <title>Calculator | Micro Project 3</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h2>calc</h2>
+            <div class="display">
+                <input type="text" name="calc-display" id="input-display" value="" readonly />
+            </div>
+            <div class="keypad">
+                <div class="grid-container">
+                    <button name="7" value="7" id="seven" onclick="setValue(this.value)">7</button>
+                    <button value="8" onclick="setValue(this.value)">8</button>
+                    <button value="9" onclick="setValue(this.value)">9</button>
+                    <button value="del" onclick="setValue(this.value)" class="edit-btn">DEL</button>
+                    <button value="4" onclick="setValue(this.value)">4</button>
+                    <button value="5" onclick="setValue(this.value)">5</button>
+                    <button value="6" onclick="setValue(this.value)">6</button>
+                    <button value="+" onclick="setOperator(this.value)">+</button>
+                    <button value="1" onclick="setValue(this.value)">1</button>
+                    <button value="2" onclick="setValue(this.value)">2</button>
+                    <button value="3" onclick="setValue(this.value)">3</button>
+                    <button value="-" onclick="setOperator(this.value)">-</button>
+                    <button value="." onclick="setValue(this.value)">.</button>
+                    <button value="0" onclick="setValue(this.value)">0</button>
+                    <button value="/" onclick="setOperator(this.value)">/</button>
+                    <button value="*" onclick="setOperator(this.value)">x</button>
+                    <button id="reset" class="edit-btn" onclick="reset()">RESET</button>
+                    <button id="result" onclick="getResult()">=</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
