@@ -5,11 +5,21 @@ function getResult() {
     let displayBox = document.getElementById("input-display");
     var expression = displayBox.value;
     //Check if eval string is empty or the last char is an operator
-    if (expression !== "" && !isOperator){
-        var result = eval(expression);
-        isResult = true;
-        displayBox.value = result.toFixed(2).replace(".00", "");
-        document.querySelector("div.display").style = "background:#0e111c";
+    try {
+        if (expression !== "" && !isOperator){
+            var result = eval(expression);
+            isResult = true;
+            displayBox.value = result.toFixed(2).replace(".00", "");
+            document.querySelector("div.display").style = "background:#0e111c";
+        }
+    } catch (error) {
+            displayBox.setAttribute("title", error.message);
+            displayBox.style = "border: 2px solid red;";
+            setTimeout(() => {
+                displayBox.removeAttribute("title");
+                displayBox.style = "border: none";
+                displayBox.value = "";
+            }, 5000);
     }
 }
 
