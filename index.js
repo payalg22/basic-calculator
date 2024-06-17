@@ -9,7 +9,10 @@ function getResult() {
         if (expression !== "" && !isOperator){
             var result = eval(expression);
             isResult = true;
-            displayBox.value = result.toFixed(2).replace(".00", "");
+            if(!Number.isInteger(result)){
+                result = result.toFixed(2);
+            }
+            displayBox.value = result;
             document.querySelector("div.display").style = "background:#0e111c";
         }
     } catch (error) {
